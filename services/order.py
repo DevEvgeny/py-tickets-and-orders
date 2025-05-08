@@ -1,11 +1,11 @@
 from datetime import datetime
-from typing import List, Dict
 
 from django.contrib.auth import get_user_model
 from django.db import transaction
 from django.db.models import QuerySet
 
-from db.models import Order, Ticket, User
+from db.models import Order, Ticket
+
 
 @transaction.atomic()
 def create_order(tickets: list, username: str, date: datetime = None) -> None:
