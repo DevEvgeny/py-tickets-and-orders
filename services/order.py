@@ -2,9 +2,7 @@ from typing import List, Dict
 
 from django.db import transaction
 
-from django.contrib.auth import get_user_model
-
-from db.models import Order, Ticket, MovieSession, User
+from db.models import Order, Ticket, User
 
 
 def create_order(
@@ -28,6 +26,7 @@ def create_order(
                 seat=ticket_data["seat"]
             )
         return order
+
 
 def get_orders(username: str = None) -> Order:
     if username:
